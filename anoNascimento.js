@@ -1,29 +1,34 @@
 const prompt = require('prompt-sync')();
 
-var nomeComp,anoNasc,idade,anoAtual;
-anoAtual = 2023
+var nomeComp,anoNascimento,idade,anoAtual;
 
-nomeComp = prompt("Diga seu nome Completo: " );
-anoNasc = 0;
+anoAtual = 2022
 
-    while(anoNasc < 1922 || anoNasc > anoAtual){
-        anoNasc = parseInt(prompt("Diga o ano que você nasceu: "));
+function validarAnoNascimento(anoNascimento){
 
-            console.log("Ano invalido, Digite novamente o ano ");
-            
-        }if(anoNasc >= 1922 || anoNasc < anoAtual){
-            
-            console.log("Seu nome é:",nomeComp);
-            console.log("voce nasceu em: ",anoNasc);
-            
-            idade = anoAtual - anoNasc;
-            
-            console.log("Você completou ou Completará: ",idade);
-            
-        }
+    if(anoNascimento >= 1922 && anoNascimento < anoAtual){
+        return true;
+    }else{
+        console.log("Ano só pode ser entre 1922 e 2021 ");
+        return false;
+    }
     
+}
+nomeComp = prompt("Diga seu nome Completo: " );
+anoNascimento = parseInt(prompt("Diga o ano que você nasceu: "));
 
+while(validarAnoNascimento(anoNascimento) == false){
+    
+    anoNascimento = parseInt(prompt("Diga o ano que você nasceu: "));
+    continue;
+                 
+        }
 
+   
+console.log("Seu nome é:",nomeComp);
+console.log("voce nasceu em: ",anoNascimento);
+idade = anoAtual - anoNascimento;
+console.log("Você completou ou Completará: ",idade);
 
 
 
