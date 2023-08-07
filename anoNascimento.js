@@ -20,11 +20,9 @@ anoNascimento = parseInt(prompt("Diga o ano que você nasceu: "));
 while(validarAnoNascimento(anoNascimento) == false){
     
     anoNascimento = parseInt(prompt("Diga o ano que você nasceu: "));
-    continue;
                  
         }
-
-   
+  
 console.log("Seu nome é:",nomeComp);
 console.log("voce nasceu em: ",anoNascimento);
 idade = anoAtual - anoNascimento;
